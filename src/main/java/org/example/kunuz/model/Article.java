@@ -13,7 +13,7 @@ import java.util.Date;
 @Entity
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private Integer id;
     @Column(nullable = false)
     private String title;
