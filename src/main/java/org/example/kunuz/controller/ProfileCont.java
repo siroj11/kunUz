@@ -26,12 +26,12 @@ public class ProfileCont {
     }
 
     @PutMapping("/profile/{id}")
-    public Result update(@RequestBody ProfileDto profileDto,@PathVariable Integer id) {
+    public Result edit(@RequestBody ProfileDto profileDto,@PathVariable Integer id) {
         return profileService.update(profileDto,id);
     }
 
     @DeleteMapping("/profile/{id}")
-    public Result delete(@PathVariable Integer id) {
+    public Result remove(@PathVariable Integer id) {
         return profileService.delete(id);
     }
 }

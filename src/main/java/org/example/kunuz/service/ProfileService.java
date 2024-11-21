@@ -6,7 +6,6 @@ import org.example.kunuz.model.Result;
 import org.example.kunuz.repository.ProfileRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +19,7 @@ public class ProfileService {
         return profileRepository.findAll();
     }
 
-    public Result create(ProfileDto profileDto) {
+    public Result create(ProfileDto profileDto){
         Profile profile = new Profile();
         profile.setName(profileDto.getName());
         profile.setSurname(profileDto.getSurname());
