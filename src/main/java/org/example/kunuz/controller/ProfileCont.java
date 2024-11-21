@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 
-public class ProfileController {
+public class ProfileCont {
     @Autowired
     ProfileService profileService;
 
