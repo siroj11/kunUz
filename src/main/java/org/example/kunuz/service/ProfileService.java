@@ -3,7 +3,7 @@ package org.example.kunuz.service;
 import org.example.kunuz.dto.ProfileDto;
 import org.example.kunuz.model.Profile;
 import org.example.kunuz.model.Result;
-import org.example.kunuz.repository.ProfileRepository;
+import org.example.kunuz.repository.ProfileRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 public class ProfileService {
     @Autowired
-    ProfileRepository profileRepository;
+    ProfileRep profileRepository;
 
     public List<Profile> read() {
         return profileRepository.findAll();
