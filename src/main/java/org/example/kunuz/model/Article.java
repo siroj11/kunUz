@@ -21,6 +21,4 @@ public class Article {
     private String content;
     @Column(nullable = false)
     private int shared_Count;
-    
-
 }
