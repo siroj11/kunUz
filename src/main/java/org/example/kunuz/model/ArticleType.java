@@ -11,12 +11,12 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Entity
-public class Region {
+public class ArticleType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false)
-    private Long order_number;
+    private Integer order_number;
     @Column(nullable = false)
     private String name_uz;
     @Column(nullable = false)

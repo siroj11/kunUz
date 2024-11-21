@@ -1,4 +1,7 @@
 package org.example.kunuz.repository;
 
-public class ArticleRepo {
+import org.example.kunuz.model.Article;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ArticleRepo extends JpaRepository<Article, Integer> {
 }
