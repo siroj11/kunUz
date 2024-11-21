@@ -7,20 +7,18 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
-public class CommentLike {
+public class SavedArticle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
-    private Profile profileId;
+    private Profile profile_id;
     @OneToOne
-    private Comment commentId;
+    private Article article_id;
     @Column(nullable = false)
     private Date created_date;
-    @Column(nullable = false)
-    private String status;
 }

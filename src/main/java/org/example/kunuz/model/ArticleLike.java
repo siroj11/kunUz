@@ -11,14 +11,14 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class CommentLike {
+public class ArticleLike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @OneToOne
-    private Profile profileId;
+    private Profile profile_id;
     @OneToOne
-    private Comment commentId;
+    private Article article_id;
     @Column(nullable = false)
     private Date created_date;
     @Column(nullable = false)
