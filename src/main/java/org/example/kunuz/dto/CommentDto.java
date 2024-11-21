@@ -17,7 +17,6 @@ import java.util.Date;
 public class CommentDto {
     private Date created_date;
     private Date updated_date;
-
     private Profile profile_id;
     private String content;
     private Article article_id;
