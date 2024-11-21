@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Entity
-public class Region {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -22,7 +22,7 @@ public class Region {
     @Column(nullable = false)
     private String name_ru;
     @Column(nullable = false)
-    private String name_eng;
+    private String name_en;
     @Column(nullable = false)
     private String visible;
     @Column(nullable = false)
