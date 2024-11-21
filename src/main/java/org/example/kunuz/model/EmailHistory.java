@@ -5,22 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 @Entity
-public class CommentLike {
+public class EmailHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToOne
-    private Profile profileId;
-    @OneToOne
-    private Comment commentId;
     @Column(nullable = false)
-    private Date created_date;
+    private String message;
     @Column(nullable = false)
-    private String status;
+    private String email;
+    @Column(nullable = false)
+    private String create_date;
 }
