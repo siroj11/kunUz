@@ -34,7 +34,7 @@ public class CommentService {
     }
 
     public Result update(CommentDto commentDto,Integer id){
-        Optional<Comment> optionalComment = commentRepo.findById(Long.valueOf(id));
+        Optional<Comment> optionalComment = commentRepo.findById(id);
         if(optionalComment.isPresent()){
             Comment comment = optionalComment.get();
             comment.setCreated_date(commentDto.getCreated_date());
@@ -51,7 +51,7 @@ public class CommentService {
     }
 
     public Result delete(Integer id){
-        commentRepo.deleteById(Long.valueOf(id));
+        commentRepo.deleteById(id);
         return new Result(true,"Comment deleted successfully");
     }
 }

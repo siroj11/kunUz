@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ArticleLikeService {
@@ -26,27 +27,25 @@ public class ArticleLikeService {
         articleLike.setStatus(articleLikeDto.getStatus());
         articleLike.setProfile_id(articleLikeDto.getProfile_id());
         articleLikeRepo.save(articleLike);
-        return new Result(true, "Category created successfully");
+        return new Result(true, "ArticleLike created successfully");
     }
 
     public Result update(ArticleLikeDto articleLikeDto, Integer id) {
-        Optional<Category> optionalCategory = categoryRepo.findById(id);
-        if (optionalCategory.isPresent()) {
-            Category category = new Category();
-            category.setName_en(categoryDto.getName_en());
-            category.setName_uz(categoryDto.getName_uz());
-            category.setName_ru(categoryDto.getName_ru());
-            category.setOrder_number(categoryDto.getOrder_number());
-            category.setCreated_date(categoryDto.getCreated_date());
-            category.setVisible(categoryDto.getVisible());
-            categoryRepo.save(category);
-            return new Result(true, "Category updated successfully");
+        Optional<ArticleLike> articleLikeOptional = articleLikeRepo.findById(id);
+        if (articleLikeOptional.isPresent()) {
+            ArticleLike articleLike = articleLikeOptional.get();
+            articleLike.setCreated_date(articleLikeDto.getCreated_date());
+            articleLike.setArticle_id(articleLikeDto.getArticle_id());
+            articleLike.setStatus(articleLikeDto.getStatus());
+            articleLike.setProfile_id(articleLikeDto.getProfile_id());
+            articleLikeRepo.save(articleLike);
+            return new Result(true, "ArticleLike updated successfully");
         }
-        return new Result(false, "Category not found");
+        return new Result(false, "ArticleLike not found");
     }
 
     public Result delete(Integer id) {
         articleLikeRepo.deleteById(id);
-        return new Result(true, "Category deleted successfully");
+        return new Result(true, "ArticleLike deleted successfully");
     }
 }
