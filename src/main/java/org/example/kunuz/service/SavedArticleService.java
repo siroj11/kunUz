@@ -29,7 +29,7 @@ public class SavedArticleService {
     }
 
     public Result update(SavedArticleDto savedArticleDto, Integer id) {
-        Optional<SavedArticle> savedArticleOptional = savedArticleRepo.findById(Long.valueOf(id));
+        Optional<SavedArticle> savedArticleOptional = savedArticleRepo.findById(id);
         if (savedArticleOptional.isPresent()) {
             SavedArticle savedArticle = savedArticleOptional.get();
             savedArticle.setArticle_id(savedArticleDto.getArticle_id());
@@ -42,7 +42,7 @@ public class SavedArticleService {
     }
 
     public Result delete(Integer id) {
-        savedArticleRepo.deleteById(Long.valueOf(id));
+        savedArticleRepo.deleteById(id);
         return new Result(true, "SavedArticle deleted successfully");
     }
 }

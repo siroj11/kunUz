@@ -31,7 +31,7 @@ public class ArticleLikeService {
     }
 
     public Result update(ArticleLikeDto articleLikeDto, Integer id) {
-        Optional<ArticleLike> articleLikeOptional = articleLikeRepo.findById(Long.valueOf(id));
+        Optional<ArticleLike> articleLikeOptional = articleLikeRepo.findById(id);
         if (articleLikeOptional.isPresent()) {
             ArticleLike articleLike = articleLikeOptional.get();
             articleLike.setCreated_date(articleLikeDto.getCreated_date());
@@ -45,7 +45,7 @@ public class ArticleLikeService {
     }
 
     public Result delete(Integer id) {
-        articleLikeRepo.deleteById(Long.valueOf(id));
+        articleLikeRepo.deleteById(id);
         return new Result(true, "ArticleLike deleted successfully");
     }
 }

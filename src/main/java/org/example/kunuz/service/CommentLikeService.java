@@ -33,7 +33,7 @@ public class CommentLikeService {
     }
 
     public Result update(CommentLikeDto commentLikeDto, Integer id) {
-        Optional<CommentLike> commentLikeOptional = commentLikeRepo.findById(Long.valueOf(id));
+        Optional<CommentLike> commentLikeOptional = commentLikeRepo.findById(id);
         if (commentLikeOptional.isPresent()) {
             CommentLike commentLike = commentLikeOptional.get();
             commentLike.setStatus(commentLikeDto.getStatus());
@@ -47,7 +47,7 @@ public class CommentLikeService {
     }
 
     public Result delete(Integer id) {
-        commentLikeRepo.deleteById(Long.valueOf(id));
+        commentLikeRepo.deleteById(id);
         return new Result(true, "CommentLike deleted successfully");
     }
 }
